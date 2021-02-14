@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+
+$primary : #18bc9c;
+$secondary: #2c3e50;
+
+body{
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+
+header{
+    background: $secondary;
+    color: #fff;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    h1{
+        margin: 0;
+    }
+    ul{
+        margin:0;
+        li{
+            display: inline-block;
+            list-style: none;
+            a{
+                color: #fff;
+                padding: 20px 10px;
+                margin: 0 10px;
+                display: inline-block;
+                text-decoration: none;
+                &:hover{
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+.form-wrapper{
+    max-width: 680px;
+    margin: 50px auto;
+    form{
+        .label {
+            font-weight: bold;
+            color: $primary;
+            padding-top: 0;
+            padding-left: 0;
+            letter-spacing: 0.025em;
+            font-size: 1.125em;
+            line-height: 1.25;
+            position: relative;
+            z-index: 100;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .text-input,.text-area{
+            padding: 0.75em 1em;
+            outline: none;
+            line-height: normal;
+            border-radius: 0;
+            border: none;
+            color: #fff;
+            background: $secondary;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .required .label:after{
+            content: " *";
+            color: #E8474C;
+            font-weight: normal;
+            font-size: 0.75em;
+            vertical-align: top;
+        }
+        .text-input:-webkit-autofill,.text-area:-webkit-autofill{
+            box-shadow: 0 0 0px 1000px $secondary inset;
+            -webkit-text-fill-color: white;
+            border-top-color: $secondary;
+            border-left-color: $secondary;
+            border-right-color: $secondary;
+        }
+        .radios{
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            overflow: hidden;
+            .radio{
+                float: left;
+                margin: 1px;
+                &-input{
+                    border: 0;
+                    clip: rect(0 0 0 0);
+                    height: 1px;
+                    margin: -1px;
+                    overflow: hidden;
+                    padding: 0;
+                    position: absolute;
+                    width: 1px;
+                    &+label{
+                        padding: 0.75em 1em;
+                        line-height: normal;
+                        width: 100%;
+                        box-sizing: border-box;
+                        background: #222222;
+                        position: relative;
+                        display: inline-block;
+                        width: auto;
+                        color: rgba(255,255,255,0.3);
+                        position: relative;
+                        -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                        cursor: pointer;
+                    }
+                    &:checked{
+                        &+label{
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+        .button{
+            padding: 0.75em 2em;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            outline: none;
+            border-radius: 0;
+            border: none;
+            display: block;
+            line-height: normal;
+            cursor: pointer;
+            background: $primary;
+            color: white;
+            font-weight: bold;
+            width: auto;
+            font-weight: bold;
+        }
+    }
+    .users-wrapper{
+        .user{
+            padding: 20px 30px;
+            background: #f6f6f6;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #111;
+            box-sizing: border-box;
+            h2{
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+            p{
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.loader-wrapper{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height: 100%;
+    top:0;
+    left:0;
+    background: rgba(255,255,255,0.8);
+    z-index: 99999;
+}
+
+.loader {
+    font-size: 10px;
+    margin: 50px auto;
+    text-indent: -9999em;
+    width: 11em;
+    height: 11em;
+    border-radius: 50%;
+    background: $primary;
+    background: -moz-linear-gradient(left, $primary 10%, rgba(255, 255, 255, 0) 42%);
+    background: -webkit-linear-gradient(left, $primary 10%, rgba(255, 255, 255, 0) 42%);
+    background: -o-linear-gradient(left, $primary 10%, rgba(255, 255, 255, 0) 42%);
+    background: -ms-linear-gradient(left, $primary 10%, rgba(255, 255, 255, 0) 42%);
+    background: linear-gradient(to right, $primary 10%, rgba(255, 255, 255, 0) 42%);
+    position: relative;
+    -webkit-animation: load3 1.4s infinite linear;
+    animation: load3 1.4s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.loader:before {
+    width: 50%;
+    height: 50%;
+    background: $primary;
+    border-radius: 100% 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+}
+
+.loader:after {
+    background: #fff;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    content: '';
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@-webkit-keyframes load3 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes load3 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}  
