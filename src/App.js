@@ -6,6 +6,7 @@ import { GET_USERS } from './utils/constants';
 
 import AddUser from './components/addUser';
 import SearchUser from './components/searchUser';
+import Reports from './components/reports';
 
 export const StoreContext = createContext(null);
 
@@ -39,7 +40,7 @@ function App() {
           <section className="container">
             <Switch>
               <Route path="/reports">
-                <AddUser />
+                <Reports />
               </Route>
               <Route path="/search">
                 <SearchUser />

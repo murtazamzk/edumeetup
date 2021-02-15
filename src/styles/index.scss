@@ -10,22 +10,33 @@ body{
 .container {
     max-width: 1170px;
     margin: 0 auto;
+    padding: 0 20px;
+    @media (min-width:1140px){
+        padding: 0;
+    }
+
 }
 
 
 header{
     background: $secondary;
     color: #fff;
+    padding: 20px 0;
     .container{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @media (min-width:768px){
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
     h1{
         margin: 0;
+        text-align: center;
     }
     ul{
         margin:0;
+        padding-left: 0;
+        text-align: center;
         li{
             display: inline-block;
             list-style: none;
@@ -161,6 +172,20 @@ header{
                 margin-top: 0;
                 margin-bottom: 0;
             }
+        }
+    }
+}
+
+.charts-wrapper{
+    margin-top: 50px;
+    @media (min-width:960px){
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .chart {
+        margin-bottom: 75px;
+        @media (min-width:960px){
+            width: 50%;
         }
     }
 }
